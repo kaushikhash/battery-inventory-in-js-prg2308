@@ -1,10 +1,20 @@
 const assert = require('assert');
 
 function countBatteriesByUsage(cycles) {
+  let lowCount = 0, mediumCount = 0, highCount = 0;
+  cycles.forEach((cycle)=>{
+    if(cycle>=0 && cycle<310){
+      lowCount++
+    }else if(cycle>=300 && cycle<930){
+      mediumCount++
+    }else if(cycle>930){
+      highCount++;
+    }
+  })
   return {
-    lowCount: 0,
-    mediumCount: 0,
-    highCount: 0
+    lowCount,
+    mediumCount,
+    highCount
   };
 }
 
